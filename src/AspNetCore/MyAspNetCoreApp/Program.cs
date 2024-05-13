@@ -17,17 +17,6 @@ builder.Services.AddControllersWithViews()
 // Add Kendo UI services to the services container"
 builder.Services.AddKendo();
 
-// Configure dependencies for ReportsController.
-builder.Services.TryAddSingleton<IReportServiceConfiguration>(sp =>
-    new ReportServiceConfiguration
-    {
-        ReportingEngineConfiguration = sp.GetService<IConfiguration>(),
-        HostAppId = "MyAspNetCoreApp",
-        Storage = new FileStorage(),
-        ReportSourceResolver = new UriReportSourceResolver(System.IO.Path.Combine(sp.GetService<IWebHostEnvironment>().ContentRootPath, "Reports"))
-    });
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

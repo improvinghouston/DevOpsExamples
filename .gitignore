@@ -353,3 +353,4 @@ MigrationBackup/
 .ionide/
 .DS_Store
 src/AspNetCore/MyAspNetCoreApp/wwwroot/js/kendo-ui-license.js
+src/AspNetCore/.idea
